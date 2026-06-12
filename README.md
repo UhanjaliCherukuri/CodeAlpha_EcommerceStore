@@ -93,4 +93,6 @@ Developed for the CodeAlpha Full Stack Development Internship.
 
 ## 👩‍💻 Developer
 
-Uhanjali Cherukuri
+**Uhanjali Cherukuri**
+
+Developed as part of the **CodeAlpha Full Stack Development Internship**.
