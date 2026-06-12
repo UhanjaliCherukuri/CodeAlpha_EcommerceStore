@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>🛒 Shopping Cart</h1>
+
+{% if cart_items %}
+
+{% for item in cart_items %}
+
+<div style="
+border:1px solid #ccc;
+padding:15px;
+margin-bottom:15px;
+background:white;
+border-radius:10px;
+">
+
+<h2>{{ item.product.name }}</h2>
+
+<p><strong>Price:</strong> ₹{{ item.product.price }}</p>
+
+<p><strong>Quantity:</strong> {{ item.quantity }}</p>
+
+<a href="/remove-from-cart/{{ item.id }}/">
+<button>Remove</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+<hr>
+
+<h2>Total: ₹{{ total }}</h2>
+
+<br>
+
+<a href="/checkout/">
+<button>Proceed to Checkout</button>
+</a>
+
+<br><br>
+
+<a href="/">Continue Shopping</a>
+
+{% else %}
+
+<h2>Your cart is empty.</h2>
+
+<a href="/">Start Shopping</a>
+
+{% endif %}
+
+{% endblock %}

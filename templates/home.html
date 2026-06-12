@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>🛒 CodeAlpha E-Commerce Store</h1>
+
+<div style="display:flex; flex-wrap:wrap; gap:20px;">
+
+{% for product in products %}
+
+<div style="
+width:250px;
+border:1px solid #ccc;
+padding:15px;
+background:white;
+border-radius:10px;
+text-align:center;
+">
+
+<img src="{{ product.image }}"
+width="200"
+height="200">
+
+<h2>{{ product.name }}</h2>
+
+<p><b>₹{{ product.price }}</b></p>
+
+<p>{{ product.description }}</p>
+
+<p>Stock: {{ product.stock }}</p>
+
+<a href="/product/{{ product.id }}/">
+<button>View Product</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
